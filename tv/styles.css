@@ -1,0 +1,81 @@
+:root {
+    --box-width: 500px;
+    --box-height: 250px;
+    --animation-length: 0.5s;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+main * {
+    margin-right: 25px;
+}
+
+.box {
+    width: var(--box-width);
+    height: var(--box-height);
+    border: solid black;
+    box-shadow: 0 0 25px 1px black;
+    transition: var(--animation-length);
+    background-size: var(--box-width);
+}
+
+.box:last-child {
+    margin-right: 0;
+}
+
+.box:hover {
+    width: calc(var(--box-width) + var(--box-width) * 0.20);
+    height: calc(var(--box-height) + var(--box-height) * 0.20);
+    background-size: calc(var(--box-width) + var(--box-width) * 0.20);
+    animation: var(--animation-length) box-hover;
+}
+
+.box-hover {
+    width: calc(var(--box-width) + var(--box-width) * 0.20);
+    height: calc(var(--box-height) + var(--box-height) * 0.20);
+    background-size: calc(var(--box-width) + var(--box-width) * 0.20);
+    animation: var(--animation-length) box-hover;
+}
+
+.netflix {
+    background-image: url("./img/netflix.png");
+    background-position-y: 40%;
+}
+
+.prime-video {
+    background-image: url("./img/prime-video.jpeg");
+    background-position-y: 50%;
+}
+
+@keyframes box-hover {
+    0% {
+        width: var(--box-width);
+        height: var(--box-height);
+        background-size: var(--box-width);
+    }
+    100% {
+        width: calc(var(--box-width) + var(--box-width) * 0.20);
+        height: calc(var(--box-height) + var(--box-height) * 0.20);
+        background-size: calc(var(--box-width) + var(--box-width) * 0.20);
+    }
+}
+
+@media screen and (max-width: 900px){
+    main {
+        flex-direction: column;
+    }
+}

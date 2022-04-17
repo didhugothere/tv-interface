@@ -1,0 +1,17 @@
+{
+  "name": "tv-interface",
+  "version": "1.0.0",
+  "description": "📺 TV-Like interface made using ExpressJS + remote",
+  "author": "Hugo <wheredidhugo@proton.me>",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "ip": "^1.1.5",
+    "robotjs": "^0.6.0"
+  }
+}
